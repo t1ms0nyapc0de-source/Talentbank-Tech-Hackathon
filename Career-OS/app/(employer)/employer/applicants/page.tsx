@@ -328,11 +328,11 @@ export default function ApplicantsPage() {
                         <p className="text-slate-500 text-[10px]">Select why this trajectory is being paused to configure re-engagement triggers.</p>
                       </div>
                       <div className="flex gap-2">
-                        <Button size="xs" variant="outline" onClick={() => handleRejectionSubmit(app.id, "salary")}>Salary Mismatch</Button>
-                        <Button size="xs" variant="outline" onClick={() => handleRejectionSubmit(app.id, "timing")}>Timing Mismatch</Button>
-                        <Button size="xs" variant="outline" onClick={() => handleRejectionSubmit(app.id, "location")}>Location Mismatch</Button>
-                        <Button size="xs" variant="outline" onClick={() => handleRejectionSubmit(app.id, "role_fit")}>Skill Delta (Fit)</Button>
-                        <Button size="xs" variant="ghost" onClick={() => setShowReasonSelect(null)}>Cancel</Button>
+                        <Button size="sm" variant="outline" onClick={() => handleRejectionSubmit(app.id, "salary")}>Salary Mismatch</Button>
+                        <Button size="sm" variant="outline" onClick={() => handleRejectionSubmit(app.id, "timing")}>Timing Mismatch</Button>
+                        <Button size="sm" variant="outline" onClick={() => handleRejectionSubmit(app.id, "location")}>Location Mismatch</Button>
+                        <Button size="sm" variant="outline" onClick={() => handleRejectionSubmit(app.id, "role_fit")}>Skill Delta (Fit)</Button>
+                        <Button size="sm" variant="ghost" onClick={() => setShowReasonSelect(null)}>Cancel</Button>
                       </div>
                     </div>
                   )}
