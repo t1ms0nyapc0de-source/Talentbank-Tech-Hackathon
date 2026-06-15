@@ -498,7 +498,7 @@ export default function StudentHub() {
                     const labelFactor = 1.25;
                     const labelX = center + radius * labelFactor * Math.cos(angle);
                     const labelY = center + radius * labelFactor * Math.sin(angle);
-                    let anchor = "middle";
+                    let anchor: "middle" | "start" | "end" = "middle";
                     if (Math.cos(angle) > 0.1) anchor = "start";
                     if (Math.cos(angle) < -0.1) anchor = "end";
                     return (
