@@ -86,7 +86,7 @@ export default function ApplicantsPage() {
     }
   };
 
-  const handleRejectionSubmit = (id: string, reason: string) => {
+  const handleRejectionSubmit = (id: string, reason: "timing" | "salary" | "location" | "role_fit") => {
     updateApplicationStatus(id, "rejected", reason);
     setShowReasonSelect(null);
     toast.success(`Candidate trajectory rejected. Tagged reason: ${reason.toUpperCase()}`);
