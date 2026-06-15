@@ -37,7 +37,7 @@ interface AlumniCandidate {
   name: string;
   email: string;
   roleType: string;
-  rejectionReason: string;
+  rejectionReason: "timing" | "salary" | "location" | "role_fit";
   timeline: string;
   location: string;
   expectedSalary: string;
@@ -305,7 +305,7 @@ export default function ApplicantsPage() {
                               name: app.candidateName,
                               email: app.candidateEmail,
                               roleType: app.alumniPreferences?.roleType || job?.title || "Engineer",
-                              rejectionReason: app.rejectionReason || "salary",
+                              rejectionReason: (app.rejectionReason as "timing" | "salary" | "location" | "role_fit") || "salary",
                               timeline: app.alumniPreferences?.timeline || "Ready in 3 months",
                               location: app.alumniPreferences?.location || "Remote",
                               expectedSalary: app.alumniPreferences?.expectedSalary || "$120,000"
