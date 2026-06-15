@@ -23,17 +23,25 @@ import { formatDate } from "@/lib/utils";
 import { SmartMatching } from "@/components/dashboard/smart-matching";
 import { AlumniNudgeModal } from "@/components/dashboard/alumni-nudge-modal";
 import { 
-  Sparkles, 
   Zap, 
   Compass, 
   Activity, 
   Clock, 
   DollarSign, 
   MapPin, 
-  CheckCircle,
-  HelpCircle,
   Users
 } from "lucide-react";
+
+interface AlumniCandidate {
+  id: string;
+  name: string;
+  email: string;
+  roleType: string;
+  rejectionReason: string;
+  timeline: string;
+  location: string;
+  expectedSalary: string;
+}
 
 export default function ApplicantsPage() {
   const user = useAuthStore((s) => s.user)!;
@@ -55,7 +63,7 @@ export default function ApplicantsPage() {
   const [showReasonSelect, setShowReasonSelect] = useState<string | null>(null);
 
   // Re-engagement modal state
-  const [selectedAlumni, setSelectedAlumni] = useState<any | null>(null);
+  const [selectedAlumni, setSelectedAlumni] = useState<AlumniCandidate | null>(null);
   const [isNudgeOpen, setIsNudgeOpen] = useState<boolean>(false);
 
   // Trajectory view toggles per application ID
@@ -78,7 +86,7 @@ export default function ApplicantsPage() {
     }
   };
 
-  const handleRejectionSubmit = (id: string, reason: any) => {
+  const handleRejectionSubmit = (id: string, reason: string) => {
     updateApplicationStatus(id, "rejected", reason);
     setShowReasonSelect(null);
     toast.success(`Candidate trajectory rejected. Tagged reason: ${reason.toUpperCase()}`);
