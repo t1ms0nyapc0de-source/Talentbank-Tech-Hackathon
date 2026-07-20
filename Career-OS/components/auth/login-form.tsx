@@ -11,6 +11,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { useAuthStore } from "@/lib/stores/auth-store";
 import { demoUsers } from "@/lib/mock/users";
 import { Logo } from "@/components/marketing/nav";
+import { SocialAuth } from "@/components/auth/social-auth";
 
 export function LoginForm() {
   const [email, setEmail] = useState("");
@@ -66,6 +67,8 @@ export function LoginForm() {
               Sign In
             </Button>
           </form>
+
+          <SocialAuth />
 
           <div className="mt-6">
             <p className="text-center text-sm text-muted-foreground mb-3">Try a demo account</p>

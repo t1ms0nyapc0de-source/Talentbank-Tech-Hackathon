@@ -13,6 +13,7 @@ import { useAuthStore } from "@/lib/stores/auth-store";
 import type { Role } from "@/lib/types";
 import { Logo } from "@/components/marketing/nav";
 import { cn } from "@/lib/utils";
+import { SocialAuth } from "@/components/auth/social-auth";
 
 export function RegisterForm() {
   const [name, setName] = useState("");
@@ -116,6 +117,8 @@ export function RegisterForm() {
               Create Account
             </Button>
           </form>
+
+          <SocialAuth />
 
           <p className="mt-6 text-center text-sm text-muted-foreground">
             Already have an account?{" "}
